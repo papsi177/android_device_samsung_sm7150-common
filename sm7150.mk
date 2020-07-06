@@ -2,9 +2,9 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # Proprietary blobs
-$(call inherit-product-if-exists, vendor/samsung/sm8250-common/sm8250-common-vendor.mk)
+ $(call inherit-product-if-exists, vendor/samsung/sm7150-common/sm7150-common-vendor.mk)
 
-COMMON_PATH := device/samsung/sm8250-common
+COMMON_PATH := device/samsung/sm7150-common
 
 # Soong Namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -44,7 +44,7 @@ PRODUCT_COPY_FILES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.samsung-sm8250
+    android.hardware.biometrics.fingerprint@2.1-service.samsung-sm6150
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -58,16 +58,16 @@ PRODUCT_COPY_FILES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0-impl.samsung-sm8250
+    android.hardware.sensors@1.0-impl.samsung-sm6150
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
     frameworks/native/data/etc/android.hardware.sensor.hifi_sensors.xml:system/etc/permissions/android.hardware.sensor.hifi_sensors.xml
 
 # Properties
--include $(COMMON_PATH)/vendor_prop.mk
+ -include $(COMMON_PATH)/vendor_prop.mk
 
 # Lineage
 ifneq ($(LINEAGE_BUILD),)
--include $(COMMON_PATH)/sm8250_lineage.mk
+-include $(COMMON_PATH)/sm7150_lineage.mk
 endif

@@ -60,9 +60,5 @@ odm                                                     /odm                   e
 /devices/platform/soc/*.ssusb/*.dwc3/xhci-hcd.*.auto*   auto    auto    defaults    voldmanaged=usb:auto
 /devices/platform/soc/8804000.sdhci/mmc_host*           auto    vfat    defaults    voldmanaged=sdcard:auto
 
-# Samsung ODE
-/dev/block/bootdevice/by-name/keydata	/keydata	ext4	noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic	wait,check,fileencryption=ice,nofail
-/dev/block/bootdevice/by-name/keyrefuge	/keyrefuge	ext4	noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic	wait,check,fileencryption=ice,nofail
-
 # Boot Image
 /dev/block/bootdevice/by-name/boot                      /boot                  emmc    defaults                                             defaults
