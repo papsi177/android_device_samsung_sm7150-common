@@ -77,8 +77,7 @@ TARGET_USERIMAGES_USE_F2FS := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_ROOT_EXTRA_FOLDERS := \
     efs \
-    dqmdbg \
-		product
+    dqmdbg
 
 # Android Verified Boot
 BOARD_AVB_ENABLE := true
