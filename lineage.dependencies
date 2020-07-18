@@ -18,4 +18,5 @@
         "repository": "firemax13/proprietary_vendor_samsung_r1q",
         "target_path": "vendor/samsung",
         "revision": "master"
+    }
 ]
