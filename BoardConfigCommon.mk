@@ -76,15 +76,9 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_ROOT_EXTRA_FOLDERS := \
-    prism \
-    optics \
-    metadata \
     efs \
-    carrier \
     dqmdbg \
-    spu \
-    keydata \
-    keyrefuge
+		product
 
 # Android Verified Boot
 BOARD_AVB_ENABLE := true
