@@ -33,9 +33,9 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CLANG_COMPILE := true
 
 # Kernel
-BOARD_BOOT_HEADER_VERSION := 2
+BOARD_BOOT_HEADER_VERSION := 1
 BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 swiotlb=1 androidboot.usbcontroller=a600000.dwc3 firmware_class.path=/vendor/firmware_mnt/image nokaslr printk.devkmsg=on
+BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 swiotlb=1 androidboot.usbcontroller=a600000.dwc3 firmware_class.path=/vendor/firmware_mnt/image nokaslr printk.devkmsg=on loop.max_part=7
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_OFFSET := 0x00008000
@@ -53,16 +53,18 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_FLASH_BLOCK_SIZE := 262144
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 82726912
-BOARD_DTBOIMG_PARTITION_SIZE := 8388608
+BOARD_DTBOIMG_PARTITION_SIZE := 10485760
 BOARD_CACHEIMAGE_PARTITION_SIZE := 419430400
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 117732929536
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2147483648
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 119108628480
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 5872025600
+BOARD_VENDORIMAGE_PARTITION_SIZE := 1205862400
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 
 # Dynamic Partitions -- system only
-BOARD_SUPER_PARTITION_SIZE := 7549747200
-BOARD_SUPER_PARTITION_GROUPS := samsung_dynamic_partitions
-BOARD_SAMSUNG_DYNAMIC_PARTITIONS_SIZE := 7545552896
-BOARD_SAMSUNG_DYNAMIC_PARTITIONS_PARTITION_LIST := \
+# BOARD_SUPER_PARTITION_SIZE := 7549747200
+# BOARD_SUPER_PARTITION_GROUPS := samsung_dynamic_partitions
+# BOARD_SAMSUNG_DYNAMIC_PARTITIONS_SIZE := 7545552896
+# BOARD_SAMSUNG_DYNAMIC_PARTITIONS_PARTITION_LIST := \
     system
 
 # File System
