@@ -2,7 +2,7 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # Proprietary blobs
- $(call inherit-product-if-exists, vendor/samsung/sm7150-common/sm7150-common-vendor.mk)
+# $(call inherit-product-if-exists, vendor/samsung/sm7150-common/sm7150-common-vendor.mk)
 
 COMMON_PATH := device/samsung/sm7150-common
 
