@@ -1,4 +1,4 @@
-eefs/Battery(/.*)?                             u:object_r:battery_efs_file:s0
+/efs/Battery(/.*)?                             u:object_r:battery_efs_file:s0
 /efs/biometrics(/.*)?                          u:object_r:sec_efs_file:s0
 /efs/carrier(/.*)?                             u:object_r:carrier_efs_file:s0
 /efs/FactoryApp(/.*)?                          u:object_r:app_efs_file:s0
