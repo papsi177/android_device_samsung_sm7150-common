@@ -1,7 +1,6 @@
 COMMON_PATH := device/samsung/sm7150-common
 
 # Platform
-BOARD_VENDOR := samsung
 TARGET_BOARD_PLATFORM := sm6150
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno618
 TARGET_SPECIFIC_HEADER_PATH += $(COMMON_PATH)/include
@@ -63,6 +62,7 @@ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
+TARGET_USES_MKE2FS := true
 
 # Dynamic Partitions -- system only
 # BOARD_SUPER_PARTITION_SIZE := 7549747200
@@ -82,13 +82,23 @@ BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_ROOT_EXTRA_FOLDERS := \
     efs \
     dqmdbg \
-    omr
+    omr \
+    metadata
+
+# Split Area
+# Vendor Overriding
+BUILD_BROKEN_DUP_RULES := true
+BOARD_VENDOR := samsung
 
 # Android Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_ROLLBACK_INDEX := 0
 # HASHTREE_DISABLED | VERIFICATION_DISABLED
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
+
+# Camera
+USE_DEVICE_SPECIFIC_CAMERA := true
+USE_CAMERA_STUB := false
 
 # Recovery
 BOARD_HAS_DOWNLOAD_MODE := true
