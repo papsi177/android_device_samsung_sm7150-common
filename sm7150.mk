@@ -68,6 +68,4 @@ PRODUCT_COPY_FILES += \
  -include $(COMMON_PATH)/vendor_prop.mk
 
 # Lineage
-ifneq ($(LINEAGE_BUILD),)
--include $(COMMON_PATH)/sm7150_lineage.mk
-endif
+-include $(COMMON_PATH)/sm7150_havoc.mk
