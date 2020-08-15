@@ -36,7 +36,6 @@ TARGET_KERNEL_CLANG_COMPILE := true
 BOARD_BOOT_HEADER_VERSION := 1
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 swiotlb=1 androidboot.usbcontroller=a600000.dwc3 firmware_class.path=/vendor/firmware_mnt/image nokaslr printk.devkmsg=on loop.max_part=7
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_OFFSET := 0x00008000
 BOARD_KERNEL_PAGESIZE := 4096
@@ -65,26 +64,17 @@ BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
 TARGET_USES_MKE2FS := true
 
-# Dynamic Partitions -- system only
-# BOARD_SUPER_PARTITION_SIZE := 7549747200
-# BOARD_SUPER_PARTITION_GROUPS := samsung_dynamic_partitions
-# BOARD_SAMSUNG_DYNAMIC_PARTITIONS_SIZE := 7545552896
-# BOARD_SAMSUNG_DYNAMIC_PARTITIONS_PARTITION_LIST := \
-#    system
-
 # File System
 TARGET_COPY_OUT_VENDOR := vendor
 TARGET_COPY_OUT_ODM := odm
-TARGET_COPY_OUT_PRODUCT := system/product
+TARGET_COPY_OUT_PRODUCT := product
 TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_ROOT_EXTRA_FOLDERS := \
     efs \
-    dqmdbg \
-    omr \
-    metadata
+    omr
 
 # Split Area
 # Vendor Overriding
