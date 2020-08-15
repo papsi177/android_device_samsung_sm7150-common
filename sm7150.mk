@@ -19,10 +19,10 @@ PRODUCT_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 # GSI AVB Public Keys
-PRODUCT_PACKAGES += \
-    q-gsi.avbpubkey \
-    r-gsi.avbpubkey \
-    s-gsi.avbpubkey
+# PRODUCT_PACKAGES += \
+#    q-gsi.avbpubkey \
+#    r-gsi.avbpubkey \
+#    s-gsi.avbpubkey
 
 # Init Resources
 PRODUCT_PACKAGES += \
